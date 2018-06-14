@@ -3,3 +3,4 @@
 test/
 data/mobilenet*
 tf-train-nh.yaml
+demo.txt

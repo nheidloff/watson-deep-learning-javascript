@@ -131,4 +131,14 @@ $ bx ml store training-runs training-qBnjUqImR
 $ bx ml deploy 0c78b7d6-9d22-4719-90da-ab649c0edc90 "my-deployment"
 ```
 
-Predict something for a test image: to be done
+Predict something for a test image: 
+
+**This is work in progress !**
+
+cd predict
+
+python3 predict.py (in Virtualenv)
+
+copy model id, deployment id and raw-payload in payload
+
+bx ml score payload.json
