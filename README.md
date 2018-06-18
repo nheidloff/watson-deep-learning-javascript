@@ -103,9 +103,10 @@ $ docker run -v xxx/watson-deep-learning-javascript/convert/data:/data -it model
 
 Build the web application (more [details](https://github.com/google/emoji-scavenger-hunt)):
 
+Change your emojis in [scavenger_classes.ts](emoji-scavenger-hunt/src/js/scavenger_classes.ts) and [game_levels.ts](emoji-scavenger-hunt/src/js/game_levels.ts).
+
 ```bash
-$ 
-cp -a xxx/watson-deep-learning-javascript/convert/data/saved_model_web/. xxx/watson-deep-learning-javascript/emoji-scavenger-hunt/dist/model/
+$ cp -a xxx/watson-deep-learning-javascript/convert/data/saved_model_web/. xxx/watson-deep-learning-javascript/emoji-scavenger-hunt/dist/model/
 $ cd xxx/watson-deep-learning-javascript/emoji-scavenger-hunt
 $ yarn prep
 $ yarn build
@@ -148,5 +149,6 @@ $ cd xxx/watson-deep-learning-javascript/predict
 $ bx ml score payload.json
 ```
 
-Check [output_labels.txt](saved-model/training-qBnjUqImR/output_lables.txt) for the labels and the order of labels.
+To interpret the result, check out [output_labels.txt](saved-model/training-qBnjUqImR/output_lables.txt) for the labels and the order of labels.
 
+As alternative to the IBM Cloud CLI you can also use curl. See the [API documentation](https://watson-ml-api.mybluemix.net/#!/Deployments/post_v3_wml_instances_instance_id_published_models_published_model_id_deployments_deployment_id_online) for details.
