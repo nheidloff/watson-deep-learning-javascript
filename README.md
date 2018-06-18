@@ -131,14 +131,22 @@ $ bx ml store training-runs training-qBnjUqImR
 $ bx ml deploy 0c78b7d6-9d22-4719-90da-ab649c0edc90 "my-deployment"
 ```
 
+Generate payloads for predictions:
+
+```bash
+$ cd xxx/watson-deep-learning-javascript/predict
+$ docker build -t generate-payload .
+$ docker run -v xxx/watson-deep-learning-javascript/predict:/data -it -e file_name=ball.JPG generate-payload
+```
+
+Copy model id, deployment id and [raw-payload.json](predict/raw-payload.json) in [payload.json](predict/payload.json).
+
 Predict something for a test image: 
 
-**This is work in progress !**
+```bash
+$ cd xxx/watson-deep-learning-javascript/predict
+$ bx ml score payload.json
+```
 
-cd predict
+Check [output_labels.txt](saved-model/training-qBnjUqImR/output_lables.txt) for the labels and the order of labels.
 
-python3 predict.py (in Virtualenv)
-
-copy model id, deployment id and raw-payload in payload
-
-bx ml score payload.json
